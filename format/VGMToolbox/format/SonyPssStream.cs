@@ -54,12 +54,13 @@ namespace VGMToolbox.format
         {
             string fileExtension;
             byte streamId = this.GetStreamId(readStream, currentOffset);
+            byte maskedStreamId = (byte)(streamId & 0xF0);
 
-            if ((streamId & 0xF0) == 0xA0)
+            if ((maskedStreamId == 0xA0) || (maskedStreamId == 0xB0))
             {
                 fileExtension = DefaultAudioExtension;                
             }
-            else if ((streamId & 0xF0) == 0x90)
+            else if (maskedStreamId == 0x90)
             {
                 fileExtension = Ac3FileExtension;
             }

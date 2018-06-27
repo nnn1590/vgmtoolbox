@@ -309,7 +309,7 @@ namespace VGMToolbox.format.util
 
                     // RAW DATA SIZE
                     bw.BaseStream.Position = Genh.RAW_DATA_SIZE_OFFSET;
-                    bw.Write((UInt32)VGMToolbox.util.ByteConversion.GetLongValueFromString(pGenhCreationStruct.RawDataSize));
+                    bw.Write((UInt32)VGMToolbox.util.ByteConversion.GetLongValueFromString(pGenhCreationStruct.RawDataSize == null ? "0" : pGenhCreationStruct.RawDataSize));
 
                     // Original File Size
                     bw.BaseStream.Position = Genh.ORIG_FILENAME_OFFSET;
