@@ -76,10 +76,10 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>del /Q *.pdb
-del /Q .\lib\*.dll
-del /Q .\lib\*.txt
-del /Q ICSharpCode.SharpZipLib.dll
-move vgmtutil.dll .\lib\vgmtutil.dll</PostBuildEvent>
+    <PostBuildEvent>
+      set +f
+      rm -f *.pdb lib/*.dll lib/*.txt ICSharpCode.SharpZipLib.dll
+      mv vgmtutil.dll lib
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>

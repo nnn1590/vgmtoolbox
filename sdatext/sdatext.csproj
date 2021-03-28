@@ -76,10 +76,11 @@
   </Target>
   -->
   <PropertyGroup>
-    <PostBuildEvent>if not exist ".\lib" mkdir lib
-move format.dll ".\lib\format.dll"
-move vgmtutil.dll ".\lib\vgmtutil.dll"
-move ICSharpCode.SharpZipLib.dll ".\lib\ICSharpCode.SharpZipLib.dll"
-del *.pdb</PostBuildEvent>
+    <PostBuildEvent>
+      set +f
+      [ ! -e lib ] %26%26 mkdir lib
+      mv format.dll vgmtutil.dll ICSharpCode.SharpZipLib.dll lib
+      rm *.pdb
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>
