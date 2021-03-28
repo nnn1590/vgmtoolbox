@@ -81,6 +81,6 @@
       rm -rf external
       rm -f Bass.Net* *.pdb lib/bass* ICSharpCode.SharpZipLib.dll
       mv format.dll vgmtutil.dll lib
-</PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>

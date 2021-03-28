@@ -80,6 +80,6 @@
       set +f
       rm -f *.pdb lib/7z.dll lib/SevenZipSharp.dll lib/Ionic.Zip.dll lib/Ionic.Zip.License.txt ICSharpCode.SharpZipLib.dll
       mv vgmtutil.dll lib
-</PostBuildEvent>
+    </PostBuildEvent>
   </PropertyGroup>
 </Project>
